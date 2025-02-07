@@ -1,5 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { JSX } from "react";
 
 /**
  * Props for `TextBlock`.

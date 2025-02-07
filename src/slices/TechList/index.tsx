@@ -5,7 +5,7 @@ import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import React, { useEffect, useRef } from "react";
+import React, { JSX, useEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
 
 

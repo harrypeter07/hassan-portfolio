@@ -18,7 +18,7 @@ const InteractiveShapes = () => {
   ];
 
   
-  const [soundEffects, setSoundEffects] = useState<Audio[]>([]); // Initialize soundEffects
+  const [soundEffects, setSoundEffects] = useState<HTMLAudioElement[]>([]); // Initialize soundEffects
 
   useEffect(() => {
     // Only run on client-side
@@ -153,7 +153,7 @@ const InteractiveShapes = () => {
       // Check for intersections
       const intersects = raycaster.intersectObjects(shapes);
       intersects.forEach((intersect) => {
-        const shape = intersect.object;
+        const shape = intersect.object as THREE.Mesh;
         const sound = soundEffects[Math.floor(Math.random() * soundEffects.length)];
 
         // Change color only if it's a circle (IcosahedronGeometry)
