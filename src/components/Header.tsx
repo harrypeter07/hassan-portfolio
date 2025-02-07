@@ -1,7 +1,7 @@
 import React from "react";
 import { createClient } from "@/prismicio";
+import NavBar from "./Navbar";
 
-import NavBar from "@/components/NavBar";
 
 export default async function Header() {
   const client = createClient();
