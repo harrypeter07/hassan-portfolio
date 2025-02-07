@@ -4,6 +4,7 @@ import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import ContentList from "./ContentList";
 import { createClient } from "@/prismicio";
+import { JSX } from "react";
 /**
  * Props for `ContentIndex`.
  */
