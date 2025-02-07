@@ -5,6 +5,7 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Avatar from "./Avatar";
+import { JSX } from "react";
 
 /**
  * Props for `Biography`.
