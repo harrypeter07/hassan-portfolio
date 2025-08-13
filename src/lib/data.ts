@@ -43,6 +43,22 @@ export interface SettingsData {
     url: string;
   };
   cta_label: string;
+  github_link: {
+    link_type: string;
+    url: string;
+  };
+  twitter_link: {
+    link_type: string;
+    url: string;
+  };
+  linkdin_link: {
+    link_type: string;
+    url: string;
+  };
+  intagram_link: {
+    link_type: string;
+    url: string;
+  };
 }
 
 // Data loading functions
