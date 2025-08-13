@@ -34,5 +34,21 @@
     "link_type": "Web",
     "url": "/contact"
   },
-  "cta_label": "Get In Touch"
+  "cta_label": "Get In Touch",
+  "github_link": {
+    "link_type": "Web",
+    "url": "https://github.com/hassan"
+  },
+  "twitter_link": {
+    "link_type": "Web",
+    "url": "https://twitter.com/hassan"
+  },
+  "linkdin_link": {
+    "link_type": "Web",
+    "url": "https://linkedin.com/in/hassan"
+  },
+  "intagram_link": {
+    "link_type": "Web",
+    "url": "https://instagram.com/hassan"
+  }
 }
