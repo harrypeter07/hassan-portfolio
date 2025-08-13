@@ -72,7 +72,13 @@ export default function Avatar({
     return (
         <div ref={component} className={clsx("relative h-full w-full " , className)}>
             <div className="avatar  overflow-hidden rounded-3xl border-2 border-slate-700 opacity-1">
-            <PrismicNextImage field={image} className="avatar-image h-full w-full object-fill" fallbackAlt="" imgixParams={{q:100}}/>
+            <img 
+                src={image.url} 
+                alt={alt || "Avatar"} 
+                className="avatar-image h-full w-full object-fill"
+                width={image.width}
+                height={image.height}
+            />
 
             <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
 
