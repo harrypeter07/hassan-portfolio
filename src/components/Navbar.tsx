@@ -110,7 +110,7 @@ function DesktopMenu({
   settings,
   pathname,
 }: {
-  settings: Content.SettingsDocument;
+  settings: SettingsData;
   pathname: string;
 }) {
   return (
