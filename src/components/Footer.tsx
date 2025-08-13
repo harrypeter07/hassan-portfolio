@@ -29,7 +29,7 @@ export default async function Footer() {
         </div>
         <nav className="navigation" aria-label="Footer Navigation">
           <ul className="flex items-center gap-1">
-            {settings.data.nav_item.map(({ link, label }, index) => (
+            {settings.nav_item.map(({ link, label }, index) => (
               <React.Fragment key={label}>
                 <li>
                   <PrismicNextLink
