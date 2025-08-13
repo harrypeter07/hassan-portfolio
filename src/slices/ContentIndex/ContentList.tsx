@@ -2,20 +2,22 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { asImageSrc, isFilled } from "@prismicio/client";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdArrowOutward } from "react-icons/md";
-import { Content } from "@prismicio/client";
+import { BlogPostData, ProjectData } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 type ContentListProps = {
-    items: Content.BlogPostDocument[] | Content.ProjectDocument[];
-    contentType: Content.ContentIndexSlice["primary"]["content_type"];
-    fallbackItemImage:Content.ContentIndexSlice["primary"]["fallback_item_image"];
-    viewMoreText:Content.ContentIndexSlice["primary"]["view_more_text"];
+    items: BlogPostData[] | ProjectData[];
+    contentType: string;
+    fallbackItemImage?: {
+        url: string;
+        width: number;
+        height: number;
+    };
+    viewMoreText?: string;
 }
 
 export default function ContentList({
