@@ -118,15 +118,8 @@ export default function ContentList({
   };
 
   const contentImages = items.map((item) => {
-    const image = isFilled.image(item.data.hover_image)
-      ? item.data.hover_image
-      : fallbackItemImage;
-    return asImageSrc(image, {
-      fit: "crop",
-      w: 220,
-      h: 320,
-      exp: -10,
-    });
+    // For now, we'll use a placeholder image since we don't have hover_image in our JSON structure
+    return fallbackItemImage?.url || "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d";
   });
 
   // Preload images
