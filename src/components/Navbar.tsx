@@ -94,7 +94,7 @@ export default function NavBar({
   );
 }
 
-function NameLogo({ name }: { name: KeyTextField }) {
+function NameLogo({ name }: { name: string }) {
   return (
     <Link
       href="/"
