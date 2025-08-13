@@ -41,7 +41,7 @@ export default async function Footer() {
                     {label}
                   </Link>
                 </li>
-                {index < settings.data.nav_item.length - 1 && (
+                {index < settings.nav_item.length - 1 && (
                   <span
                     className="text-4xl font-thin leading-[0] text-slate-400"
                     aria-hidden="true"
