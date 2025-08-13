@@ -118,13 +118,13 @@ function DesktopMenu({
       {settings.nav_item.map(({ link, label }, index) => (
         <React.Fragment key={label}>
           <li>
-            <PrismicNextLink
+            <Link
               className={clsx(
                 "group relative block overflow-hidden rounded px-3 py-1 text-base font-bold text-slate-900",
               )}
-              field={link}
+              href={link.url}
               aria-current={
-                pathname.includes(asLink(link) as string) ? "page" : undefined
+                pathname.includes(link.url) ? "page" : undefined
               }
             >
               <span
