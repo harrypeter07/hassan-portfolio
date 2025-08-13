@@ -138,7 +138,7 @@ function DesktopMenu({
               <span className="relative">{label}</span>
             </Link>
           </li>
-          {index < settings.data.nav_item.length - 1 && (
+                      {index < settings.nav_item.length - 1 && (
             <span
               className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
               aria-hidden="true"
@@ -150,8 +150,8 @@ function DesktopMenu({
       ))}
       <li>
         <Button
-          linkField={settings.data.cta_link}
-          label={settings.data.cta_label}
+          linkField={settings.cta_link}
+          label={settings.cta_label}
           className="ml-3"
         />
       </li>
