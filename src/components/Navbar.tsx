@@ -82,8 +82,8 @@ export default function NavBar({
           ))}
           <li>
             <Button
-              linkField={settings.data.cta_link}
-              label={settings.data.cta_label}
+              linkField={settings.cta_link}
+              label={settings.cta_label}
               className="ml-3"
             />
           </li>
