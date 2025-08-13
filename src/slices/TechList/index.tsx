@@ -3,17 +3,17 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
 import React, { JSX, useEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
-
+import { SliceData } from "@/lib/data";
 
 gsap.registerPlugin(ScrollTrigger)
 /**
  * Props for `TechList`.
  */
-export type TechListProps = SliceComponentProps<Content.TechListSlice>;
+export type TechListProps = {
+  slice: SliceData;
+};
 
 /**
  * Component for "TechList" Slices.
@@ -71,7 +71,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       </Heading>
       </Bounded>
      
-      {slice.primary.tech_name.map(({ tech_color , tech_name} , index) => (
+      {slice.items.map(({ tech_color , tech_name} , index) => (
   // Render the item
   <div key={index} className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
   aria-label={tech_name || ""}>

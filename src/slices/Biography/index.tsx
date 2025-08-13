@@ -1,16 +1,16 @@
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Avatar from "./Avatar";
 import { JSX } from "react";
+import { SliceData } from "@/lib/data";
 
 /**
  * Props for `Biography`.
  */
-export type BiographyProps = SliceComponentProps<Content.BiographySlice>;
+export type BiographyProps = {
+  slice: SliceData;
+};
 
 /**
  * Component for "Biography" Slices.
@@ -27,8 +27,9 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
            {slice.primary.heading}
         </Heading>
           <div className="prose prose-xl prose-slate prose-invert col-start-1">
-               <PrismicRichText field={slice.primary.body}/>
-                 
+               {slice.primary.body.map((paragraph: any, index: number) => (
+                 <p key={index}>{paragraph.content.text}</p>
+               ))}
           </div>
           <Button
           linkField={slice.primary.button_link}

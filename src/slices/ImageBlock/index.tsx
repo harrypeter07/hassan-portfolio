@@ -1,19 +1,25 @@
-import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
 import { JSX } from "react";
+import { SliceData } from "@/lib/data";
 
 /**
  * Props for `ImageBlock`.
  */
-export type ImageBlockProps = SliceComponentProps<Content.ImageBlockSlice>;
+export type ImageBlockProps = {
+  slice: SliceData;
+};
 
 /**
  * Component for "ImageBlock" Slices.
  */
 const ImageBlock = ({ slice }: ImageBlockProps): JSX.Element => {
   return (
-  <PrismicNextImage field={slice.primary.image} imgixParams={{w: 600}}/>
+    <img 
+      src={slice.primary.image.url} 
+      alt="Content image"
+      className="w-full max-w-2xl mx-auto"
+      width={slice.primary.image.width}
+      height={slice.primary.image.height}
+    />
   );
 };
 

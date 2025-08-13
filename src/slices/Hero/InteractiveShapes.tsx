@@ -211,7 +211,7 @@ const InteractiveShapes = () => {
     return null;
   }
 
-  return <canvas ref={canvasRef}></canvas>;
+  return( <div className=''><canvas  ref={canvasRef}></canvas></div>)
 };
 
 export default InteractiveShapes;

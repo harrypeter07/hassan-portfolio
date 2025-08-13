@@ -1,16 +1,16 @@
 "use client";
-import { Content, KeyTextField } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
 import { JSX, useEffect, useRef } from "react";
 import gsap from "gsap";
 import Bounded from "@/components/Bounded";
 import InteractiveShapes from "./InteractiveShapes";
-//import  from "./InteractiveShapes";
-//import  Shapes from './Shapes'
+import { SliceData } from "@/lib/data";
+
 /**
  * Props for `Hero`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
+export type HeroProps = {
+  slice: SliceData;
+};
 
 /**
  * Component for "Hero" Slices.
@@ -65,7 +65,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 		return () => ctx.revert();
 	}, []);
 
-	const renderLetters = (name: KeyTextField, key: string) => {
+	const renderLetters = (name: string, key: string) => {
 		if (!name) return;
 		return name.split("").map((letter, index) => (
 			<span
@@ -84,9 +84,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 		>
 			<div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
 				{/**Shapes  */}
-        <div>
+        <div className="flex justify-center  ">
 
-				<InteractiveShapes/>
+				<InteractiveShapes />
         </div>
 
 				<div className="col-start-1 md:row-start-1">
