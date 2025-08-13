@@ -6,8 +6,7 @@ import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import { getSettingsData } from "@/lib/data";
 
 export default async function Footer() {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
+  const settings = await getSettingsData();
   return (
     <Bounded as="footer" className="text-slate-600">
       <div className="container mx-auto mt-20 flex flex-col items-center justify-between gap-6 py-8 sm:flex-row ">
