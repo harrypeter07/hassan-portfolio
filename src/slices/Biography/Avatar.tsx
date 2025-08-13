@@ -1,14 +1,14 @@
 "use client"
-import { ImageField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-
-
 type AvatarProps = {
-    image:ImageField;
+    image: {
+        url: string;
+        width: number;
+        height: number;
+    };
     className?: string;
     alt?: string;
 }
