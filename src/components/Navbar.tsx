@@ -70,7 +70,7 @@ export default function NavBar({
                   <span className="relative">{label}</span>
                 </Link>
               </li>
-              {index < settings.data.nav_item.length - 1 && (
+              {index < settings.nav_item.length - 1 && (
                 <span
                   className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
                   aria-hidden="true"
