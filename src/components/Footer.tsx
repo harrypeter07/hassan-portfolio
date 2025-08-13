@@ -54,42 +54,34 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end">
-          {isFilled.link(settings.data.github_link) && (
-            <PrismicNextLink
-              field={settings.data.github_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on GitHub"}
-            >
-              <FaGithub />
-            </PrismicNextLink>
-          )}
-          {isFilled.link(settings.data.twitter_link) && (
-            <PrismicNextLink
-              field={settings.data.twitter_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on Twitter"}
-            >
-              <FaTwitter />
-            </PrismicNextLink>
-          )}
-           {isFilled.link(settings.data.linkdin_link) && (
-            <PrismicNextLink
-          field={settings.data.linkdin_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on Twitter"}
-            >
-              <FaLinkedin/>
-            </PrismicNextLink>)}
-
-          {isFilled.link(settings.data.intagram_link) && (
-            <PrismicNextLink
-              field={settings.data.intagram_link}
-              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
-              aria-label={settings.data.name + " on LinkedIn"}
-            >
-              <FaInstagram />
-            </PrismicNextLink>
-          )}
+          <Link
+            href={settings.github_link.url}
+            className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+            aria-label={settings.name + " on GitHub"}
+          >
+            <FaGithub />
+          </Link>
+          <Link
+            href={settings.twitter_link.url}
+            className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+            aria-label={settings.name + " on Twitter"}
+          >
+            <FaTwitter />
+          </Link>
+          <Link
+            href={settings.linkdin_link.url}
+            className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+            aria-label={settings.name + " on LinkedIn"}
+          >
+            <FaLinkedin/>
+          </Link>
+          <Link
+            href={settings.intagram_link.url}
+            className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+            aria-label={settings.name + " on Instagram"}
+          >
+            <FaInstagram />
+          </Link>
         </div>
       </div>
     </Bounded>
