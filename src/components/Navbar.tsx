@@ -2,17 +2,16 @@
 
 import clsx from "clsx";
 import React, { useState } from "react";
-import { Content, KeyTextField, asLink } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import { MdMenu, MdClose } from "react-icons/md";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
+import { SettingsData } from "@/lib/data";
 
 export default function NavBar({
   settings,
 }: {
-  settings: Content.SettingsDocument;
+  settings: SettingsData;
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -45,17 +44,17 @@ export default function NavBar({
           >
             <MdClose />
           </button>
-          {settings.data.nav_item.map(({ link, label }, index) => (
+          {settings.nav_item.map(({ link, label }, index) => (
             <React.Fragment key={label}>
               <li className="first:mt-8">
-                <PrismicNextLink
+                <Link
                   className={clsx(
                     "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-900 ",
                   )}
-                  field={link}
+                  href={link.url}
                   onClick={() => setOpen(false)}
                   aria-current={
-                    pathname.includes(asLink(link) as string)
+                    pathname.includes(link.url)
                       ? "page"
                       : undefined
                   }
@@ -63,13 +62,13 @@ export default function NavBar({
                   <span
                     className={clsx(
                       "absolute inset-0 z-0 h-full translate-y-12 rounded bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
-                      pathname.includes(asLink(link) as string)
+                      pathname.includes(link.url)
                         ? "translate-y-6"
                         : "translate-y-18",
                     )}
                   />
                   <span className="relative">{label}</span>
-                </PrismicNextLink>
+                </Link>
               </li>
               {index < settings.data.nav_item.length - 1 && (
                 <span

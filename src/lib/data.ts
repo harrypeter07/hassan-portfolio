@@ -29,6 +29,22 @@ export interface ProjectData extends PageData {
   uid: string;
 }
 
+export interface SettingsData {
+  name: string;
+  nav_item: Array<{
+    link: {
+      link_type: string;
+      url: string;
+    };
+    label: string;
+  }>;
+  cta_link: {
+    link_type: string;
+    url: string;
+  };
+  cta_label: string;
+}
+
 // Data loading functions
 export async function getHomepageData(): Promise<PageData> {
   const dataPath = path.join(process.cwd(), 'src/data/homepage.json');
@@ -67,6 +83,12 @@ export async function getBlogPostsData(): Promise<BlogPostData[]> {
 export async function getBlogPostByUID(uid: string): Promise<BlogPostData | null> {
   const posts = await getBlogPostsData();
   return posts.find(post => post.uid === uid) || null;
+}
+
+export async function getSettingsData(): Promise<SettingsData> {
+  const dataPath = path.join(process.cwd(), 'src/data/settings.json');
+  const jsonData = fs.readFileSync(dataPath, 'utf8');
+  return JSON.parse(jsonData);
 }
 
 // Helper function to format dates (similar to the original blog post component)
