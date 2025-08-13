@@ -1,5 +1,7 @@
 import { JSX } from "react";
 import { SliceData } from "@/lib/data";
+import Bounded from "@/components/Bounded";
+import Heading from "@/components/Heading";
 
 /**
  * Props for `TextBlock`.
@@ -13,11 +15,23 @@ export type TextBlockProps = {
  */
 const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
   return (
-    <div className="max-w-prose">
-      {slice.primary.body.map((paragraph: any, index: number) => (
-        <p key={index}>{paragraph.content.text}</p>
-      ))}
-   </div>
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <div className="max-w-prose mx-auto">
+        {slice.primary.heading && (
+          <Heading as="h2" size="lg" className="mb-6">
+            {slice.primary.heading}
+          </Heading>
+        )}
+        <div className="prose prose-lg prose-slate prose-invert">
+          {slice.primary.body.map((paragraph: any, index: number) => (
+            <p key={index}>{paragraph.content.text}</p>
+          ))}
+        </div>
+      </div>
+    </Bounded>
   );
 };
 

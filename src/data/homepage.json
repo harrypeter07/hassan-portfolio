@@ -82,6 +82,32 @@
           "tech_category": "Styling"
         }
       ]
+    },
+    {
+      "slice_type": "content_index",
+      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "primary": {
+        "heading": "Featured Projects",
+        "content_type": "Project",
+        "view_more_text": "View Project",
+        "description": "Here are some of my recent projects that showcase my skills and experience."
+      },
+      "items": []
+    },
+    {
+      "slice_type": "content_index",
+      "slice_label": null,
+      "variation": "default",
+      "version": "initial",
+      "primary": {
+        "heading": "Latest Blog Posts",
+        "content_type": "Blog",
+        "view_more_text": "Read More",
+        "description": "Thoughts and insights on web development, technology, and best practices."
+      },
+      "items": []
     }
   ]
 }

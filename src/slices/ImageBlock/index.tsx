@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import { SliceData } from "@/lib/data";
+import Bounded from "@/components/Bounded";
 
 /**
  * Props for `ImageBlock`.
@@ -13,13 +14,20 @@ export type ImageBlockProps = {
  */
 const ImageBlock = ({ slice }: ImageBlockProps): JSX.Element => {
   return (
-    <img 
-      src={slice.primary.image.url} 
-      alt="Content image"
-      className="w-full max-w-2xl mx-auto"
-      width={slice.primary.image.width}
-      height={slice.primary.image.height}
-    />
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <div className="flex justify-center">
+        <img 
+          src={slice.primary.image.url} 
+          alt="Content image"
+          className="w-full max-w-4xl rounded-lg shadow-lg"
+          width={slice.primary.image.width}
+          height={slice.primary.image.height}
+        />
+      </div>
+    </Bounded>
   );
 };
 

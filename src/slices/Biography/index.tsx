@@ -22,26 +22,28 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
 
-      <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr , 1fr]">
-        <Heading as="h1" size="xl" className="col-start-1">
-           {slice.primary.heading}
-        </Heading>
-          <div className="prose prose-xl prose-slate prose-invert col-start-1">
-               {slice.primary.body.map((paragraph: any, index: number) => (
-                 <p key={index}>{paragraph.content.text}</p>
-               ))}
+      <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr, 1fr]">
+        <div className="col-start-1">
+          <Heading as="h1" size="xl" className="mb-6">
+            {slice.primary.heading}
+          </Heading>
+          <div className="prose prose-xl prose-slate prose-invert mb-8">
+            {slice.primary.body.map((paragraph: any, index: number) => (
+              <p key={index}>{paragraph.content.text}</p>
+            ))}
           </div>
           <Button
-          linkField={slice.primary.button_link}
-          label={slice.primary.button_text
-          }
+            linkField={slice.primary.button_link}
+            label={slice.primary.button_text}
           />
+        </div>
 
-      <Avatar 
-      image={slice.primary.avatar}
-
-     className="row-start-1 max-w-sm md:col-start-2 md:row-end-3 rounded-[12px]"
-      />
+        <div className="col-start-2 row-start-1">
+          <Avatar 
+            image={slice.primary.avatar}
+            className="max-w-sm rounded-[12px]"
+          />
+        </div>
       </div>
      </Bounded>
   );
